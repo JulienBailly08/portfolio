@@ -1,0 +1,36 @@
+body{
+    font-family: 'KoHo', sans-serif;
+}
+h1{
+    font-size:4rem;
+}
+h1 span{
+    display: inline-block;
+}
+  
+.taille{
+    height: 500px;
+}
+.lama{
+    background-color: #30475e;
+}
+.projets{
+    text-decoration: none;
+}
+header>div{
+    height: 250px;
+}
+header i{
+    font-size: 1.5rem;
+}
+nav>a{
+    text-decoration: none;
+    color: white;
+}
+
+.imageFond{
+    background-image: url(../img/medium.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 400px;
+}
