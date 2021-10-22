@@ -51,10 +51,11 @@
           dispensée par Human Booster.
         </p>
         <p class="my-md-5 my-3 text-dark px-2">
-          Pour me permettre de finaliser ce parcours, je suis à la recherche d'un stage pour la période du 20 septembre
-          au 30 novembre 2021
-          afin de mettre en application et perfectionner les compétences que j'ai pu acquérir lors de ma formation de
-          développement Web.
+          Je suis actuellement à la recherche d'une
+          première expérience me permettant de mettre
+          en application les apprentissages dispensés lors
+          de cette formation et de monter en
+          compétences à compter du 13 décembre 2021.
         </p>
       </div>
     </div>
@@ -90,7 +91,7 @@
             <div class="d-flex flex-column p-3">
               <img src="img/Animes2.png" class="rounded img-fluid p-3">
               <div class="d-flex flex-column">
-                <h3 class="text-center text-white h6 pt-3 mt-4 mb-3">En cours : site E-commerce</h3>
+                <h3 class="text-center text-white h6 pt-3 mt-4 mb-3">Projet de fin de formation : site E-commerce</h3>
               </div>
             </div>
           </a>
@@ -120,6 +121,18 @@
           </a>
         </div>
       </div>
+      <div class="col d-flex flex-column p-2 size">
+        <div class="col card-1 d-flex flex-column rounded justify-content-around bg-dark">
+          <a href="http://julienbailly.ddns.net/blog" target="_blank" class="projets">
+            <div class="d-flex flex-column p-3">
+              <img src="img/memory2.png" class="rounded img-fluid p-3">
+              <div class="d-flex flex-column">
+                <h3 class="text-center text-white h6 pt-3 mt-4 mb-3">Fake blog sur Symfony</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -127,24 +140,24 @@
   <section class="mt-5" id="contact">
     <div class="bg-dark rounded-3">
       <div class="container py-5">
-        <form action="">
+        <form>
           <div class="row d-flex">
             <div class="col-6 mb-3 text-start">
-              <input type="text" class="form-control" required name="firstname" placeholder="Votre prénom">
+              <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Votre prénom">
             </div>
             <div class="col-6 mb-3 text-start">
-              <input type="text" class="form-control" required name="lastname" placeholder="Votre nom">
+              <input type="text" class="form-control"  name="lastname" id="lastname" placeholder="Votre nom">
             </div>
             <div class="col-6 mb-3 text-start">
-              <input type="email" class="form-control" required name="mail"
-                placeholder="vous@votreDomaine.net">
+              <input type="email" class="form-control"  name="mail" id="mail" placeholder="vous@votreDomaine.net">
             </div>
             <div class="col-12 mb-5 text-start">
-              <label for="message" class="text-white form-label">Un peu d'écriture :</label>
-              <textarea class="form-control" required name="message" id="message" rows="3"></textarea>
+              <label for="text" class="text-white form-label">Un peu d'écriture :</label>
+              <textarea class="form-control" name="text" id="text" rows="3"></textarea>
             </div>
-            <div class="col-12 mb-3 text-end">
-              <button class="btn btn-outline-light">Me contacter</button>
+            <div class="col-8 text-white" id="infoMail"></div>
+            <div class="col-4 mb-3 text-end">
+              <button class="btn btn-outline-light" type="submit" id="submit">Me contacter</button>
             </div>
           </div>
         </form>
