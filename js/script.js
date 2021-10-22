@@ -61,6 +61,10 @@ submitButton.on("click",function(envoi){
 	
 		if(OK =='ok'){
 		infoMail.text("Message envoyé");
+    firstname.val("");
+    lastname.val("");
+    mail.val("");
+    text.val("");
 		setTimeout(function(){
 			infoMail.text("");
 		}, 3000);
