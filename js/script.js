@@ -44,43 +44,102 @@ let mail = $("#mail");
 let text = $("#text");
 
 
-
 submitButton.on("click",function(envoi){
     envoi.preventDefault();
-    $.ajax({
-        url:"../mail/sendEmail.php",
-        type:"POST",
-        data:{
-            firstname: firstname.val(),
-            lastname: lastname.val(),
-            mail: mail.val(),
-			text: text.val()
-        },
-    }).done(function(OK){
-	
-	
-		if(OK =='ok'){
-		infoMail.text("Message envoyé");
-    firstname.val("");
-    lastname.val("");
-    mail.val("");
-    text.val("");
-		setTimeout(function(){
-			infoMail.text("");
-		}, 3000);
+    let firstnameOK=true;
+    let lastnameOK=true;
+    let mailOK=true;
+    let textOK=true;
+  
+    if(!validateFirstname(firstname.val())){
+      firstnameOK=false;
+      firstname.addClass("formWrong");
+      setTimeout(function(){
+        firstname.removeClass("formWrong");
+      }, 2500);
+          
+    }
+    if(!validateLastname(lastname.val())){
+      lastnameOK=false;
+      lastname.addClass("formWrong");
+      setTimeout(function(){
+        lastname.removeClass("formWrong");
+      }, 2500);
 
-	}
-	else{
-		infoMail.text("Merci de renseigner tout les champs");
-		setTimeout(function(){
-			infoMail.text("");
-		}, 3000);
-	}
-	
-    }).fail(function(erreur){
-        console.log(erreur);
-    });
+    }
+    if(!validateEmail(mail.val())){
+      mailOK=false;
+      mail.addClass("formWrong");
+      setTimeout(function(){
+        mail.removeClass("formWrong");
+      }, 2500);
+
+    }
+    if(text.val()==''){
+      textOK=false;
+      text.addClass("formWrong");
+      setTimeout(function(){
+        text.removeClass("formWrong");
+      }, 2500);
+    }
+
+    if(firstnameOK&&lastnameOK&&mailOK&&textOK){
+      sendDatas();
+    }
+
 });
+
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+function validateFirstname(firstname){
+  const re = /[a-zA-Z]+[a-zA-Z]+?-?[a-zA-Z]+/;
+  return re.test(firstname);
+
+}
+function validateLastname(lastname){
+  const re = /[a-zA-Z]+[a-zA-Z]/;
+  return re.test(lastname);
+}
+
+
+function sendDatas(){
+  $.ajax({
+    url:"../mail/sendEmail.php",
+    type:"POST",
+    data:{
+        firstname: firstname.val(),
+        lastname: lastname.val(),
+        mail: mail.val(),
+  text: text.val()
+    },
+}).done(function(OK){
+if(OK =='ok'){
+infoMail.text("Message envoyé");
+firstname.val("");
+lastname.val("");
+mail.val("");
+text.val("");
+setTimeout(function(){
+  infoMail.text("");
+}, 3000);
+}
+
+else{
+infoMail.text("Merci de renseigner tout les champs");
+setTimeout(function(){
+  infoMail.text("");
+}, 3000);
+}
+
+}).fail(function(erreur){
+    console.log(erreur);
+});
+}
+
+
 
 
 

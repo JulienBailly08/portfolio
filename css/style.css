@@ -35,6 +35,10 @@ nav>a{
     height: 400px;
 }
 
+.formWrong{
+  background-color: rgb(187, 134, 134)!important;
+  color: white!important;
+}
 
 
 /****
