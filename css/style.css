@@ -7,6 +7,9 @@ h1{
 h1 span{
     display: inline-block;
 }
+#typed{
+  height: 50px;
+}
 
 .taille{
     height: 500px;

@@ -86,7 +86,6 @@ submitButton.on("click",function(envoi){
     if(firstnameOK&&lastnameOK&&mailOK&&textOK){
       sendDatas();
     }
-
 });
 
 function validateEmail(email) {
@@ -104,7 +103,6 @@ function validateLastname(lastname){
   return re.test(lastname);
 }
 
-
 function sendDatas(){
   $.ajax({
     url:"../mail/sendEmail.php",
@@ -115,8 +113,7 @@ function sendDatas(){
         mail: mail.val(),
   text: text.val()
     },
-}).done(function(OK){
-if(OK =='ok'){
+}).done(function(){
 infoMail.text("Message envoyé");
 firstname.val("");
 lastname.val("");
@@ -126,15 +123,7 @@ setTimeout(function(){
   infoMail.text("");
 }, 3000);
 }
-
-else{
-infoMail.text("Merci de renseigner tout les champs");
-setTimeout(function(){
-  infoMail.text("");
-}, 3000);
-}
-
-}).fail(function(erreur){
+).fail(function(erreur){
     console.log(erreur);
 });
 }
