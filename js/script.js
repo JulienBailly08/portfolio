@@ -5,7 +5,7 @@ $("#typed").typed({
     showCursor :false,
     cursorChar :":D",
     fadeOut: true,
-    strings: ["Bienvenue !","Developeur Web"],
+    strings: ["Bienvenue !","Developpeur Web"],
     backSpeed :100,
     typeSpeed: 30
 });
