@@ -3,7 +3,7 @@
 
 $("#typed").typed({
     showCursor :false,
-    cursorChar :":D",
+    cursorChar :"_",
     fadeOut: true,
     strings: ["Bienvenue !","Developpeur Web"],
     backSpeed :100,
